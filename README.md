@@ -2,7 +2,7 @@
 Development of a EVSE (Electric Vehicle Supply Equipment) Charge Controller Circuit. Implementing the charger on ESP32S microcontroller.  
 
 *This project is influenced from severeal resources. To see the resources used in this project, you can see the references section below.*    
-*In the file "EVSE_SonDevre_Dökümantasyon_2.pdf" the company names are removed (Company asks that). I developed that circuitry in one of my internships, so I generated the documentation in Turkish. The rest of the page is translated from that file.*     
+*In the file "EVSE_SonDevre_Dökümantasyon_2.pdf" the company names are removed (Company asks that). They allowed me to share that since this project was not raleted with them. I developed that circuitry in one of my internships, so I generated the documentation in Turkish. The rest of the page is translated from that file.*     
   
 Electric vehicles are getting popular day by day. The main advantage of electric cars is you can charge it from your wall outlet if your electrical system meets the minimum requirements. Although charging process looks quite complex, it is not for the EVSE side. Becuse all neccessary charging equipment and BMS is embedded into the most of the electric cars. One thing needs to be done is implementing the communication protocol. In order to manage the charging process the control pilot signal is generated from the EVSE charge controller.  
   Responsibilties of EVSE charger is:  
