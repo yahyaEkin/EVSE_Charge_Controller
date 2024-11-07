@@ -37,10 +37,10 @@ Blue led: I was planning to use to simulate relay but I connected the relay. So 
 I measured the CP line with oscilloscope for different states.  
 ![image](https://github.com/user-attachments/assets/ee23fab7-e5c9-44c3-8cd0-570ce81cede5)
 ![image](https://github.com/user-attachments/assets/67538ce2-6972-435f-99f0-757c8c0ee45a)
-
+State A. DC 12V Signal.  State B +9V maximum.
 ![image](https://github.com/user-attachments/assets/804225f8-d878-4c16-a252-cd4e179b00da)
 ![image](https://github.com/user-attachments/assets/70f370dd-b252-4074-9f52-9a552b11af5d)  
-State A. DC 12V Signal.  State B +9V maximum.  State C +6V maximum.  Frequency of the CP signal.  
+State C +6V maximum.  Frequency of the CP signal.  
 
 
 
