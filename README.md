@@ -26,7 +26,17 @@ STATE D: It is same as STATE C, but for ventilation required batteries.
 STATE E: Utility problem.  
 STATE F: EVSE is not available.  
 
-  
+  To implement the protocol, I prepared a circuitry using ESP32S, LM393 OPAMP, LM358 OPAMP, Relay, LCD, and several other components can be seen from the pictures. This circuit is generates the CP line from the microcontroller, amplfys the CP line to reach +12 -12 level by LM393 Opamp, buffers it with another LM393, and compares the resulting CP line for teo different voltages as 9.3V for STATE A to B change and 6.3V for STATE B to C change. Here is the proteus schematic for the circuit. However opamps are different than this schemtaic. LM358N is replaced with LM393 and default opamps are replaced with LM358. Since it is simulating tool, I was not aware that I need buffering at the end of the CP generation stage. This circuit is influenced from the youtube video : https://www.youtube.com/watch?v=duhqH-tDqpk&t=909s from Jakob Dykstra. It clearly explains the circuitry and also the standard. One differentiation from his circuit and mine is, his circuit uses 0V as lower part of the CP line. But in my circuit, my CP line low voltage is -12V as the standard requires. However Jakob's circuit works fine, so that condition about low voltage level might not be crucial.  
+  <img width="546" alt="image" src="https://github.com/user-attachments/assets/0aafa5cd-8c12-49e2-90b0-03c9a040d417">  
+  Here is my breadboard setup. I added capacitor for max current adjustment. The LCD screen shows the vehicle connection status, charge request status and maximum current status. Also ı added LEDS to indicate states. The LCD screen is in Turkish, due to project requirement in that time.  
+Red led: STATE A  
+Yellow led: STATE B  
+Green led: STATE C  
+Blue led: I was planning to use to simulate relay but I connected the relay. So I did not used that led.  
+<img width="316" alt="image" src="https://github.com/user-attachments/assets/241b1779-9628-4cc6-94ab-5436df4fbcef">  
+
+
+
   
 
   
