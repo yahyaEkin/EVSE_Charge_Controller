@@ -40,6 +40,34 @@ This measurements are taken from the node that pointed below.
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/523ec1c5-c805-4bc6-ad1a-7e595b709b76">  
 Explanation of the control algorithm can be found on flowchart below.  
 ![çalışma mantığı-Sayfa -2 drawio](https://github.com/user-attachments/assets/19283e0d-015d-4692-a6db-abcd2395dda1)  
+In this circuit, the voltage level of the control pilot line is determined by opamps. The first opamp is set to respond to the 9.3V level, that is, the signal's transition from 12V to 9V in state B. The second opamp is set to respond to the 6.3V level, that is, the control pilot line peak voltage dropping from 9V to 6V. If the control pilot signal levels are higher than the set limit voltages above, a fixed signal of around 3V is obtained at the opamp outputs, while if the voltage drops below the threshold voltage, the opposite of the signal on the control pilot line is seen at the opamp output. The following image shows the oscilloscope image of the signal at the opamp outputs when it is higher and lower than the threshold value.  
+![image](https://github.com/user-attachments/assets/8e714513-4c9e-413c-ae12-4fdc6ac4d103)  
+Figure 10. When the opamp output is higher than the threshold (left), it is lower (right).  
+
+Here, instead of reading the voltage analogously during the reading of this signal, the times when the signal is high and low are measured with the Arduino pulseIn() function. This function starts a timer when the signal's state transition is made (for example, from low to high) and stops the timer when it goes from high to low and gives the elapsed time in microseconds. With this method, even when the duty cycle is 5%, the two signals given in Figure 10 above can be separated from each other, thus healthy state transitions can be made. In the image below, the times measured with the oscilloscope and the microcontroller are shown in order to show the sensitivity of this function (Figure 11).  
+<img width="604" alt="image" src="https://github.com/user-attachments/assets/25c5eb4a-665a-4ff7-8737-089b60d4293c">  
+Figure 11. Microcontroller HIGH to LOW time: 759 us, oscilloscope measured time 760 us.  
+<img width="613" alt="image" src="https://github.com/user-attachments/assets/bb8d3489-de69-45a2-a422-24ae6c087acb">  
+Figure 12. Microcontroller LOW to HIGH time: 239 us, oscilloscope measured time 240 us.  
+<img width="599" alt="image" src="https://github.com/user-attachments/assets/a03a6dff-48b3-4ffb-9c36-d4b7c05a197f">  
+Figure 13. Microcontroller LOW to HIGH time: 0 us, oscilloscope measured time 0 us.  
+
+As in Figure 13, if the signal is constant, the measurements are 0 us. In other words, when our signal is above the threshold value, the high to low and low to high times are 0 us, and otherwise these times change. This situation is used for comparison. In addition to the above explanations about the circuit, the current setting can be adjusted with the blue potentiometer on the breadboard, and the effect of the adjusted current on the control pilot signal can be observed. In addition, the vehicle connection status, charging request and current can be observed instantly with the connected LCD screen. The states and images of the circuit are given below. The blue LED connected to the circuit on the breadboard is shown as a relay pin in the circuit diagram. The necessary relay control operations can be performed using this output. The circuit diagram is at the end of the document.  
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/0efb22ba-ca6c-431e-90e1-9d5527ea8939">  
+The circuitry is attached to project files.  
+
+# References  
+Jacob Dykstra. (2016, December 26). DIY Level 2 EV Charger Part 2 - Designing 
+the Hardware [Video]. YouTube. https://www.youtube.com/watch?v=duhqH
+tDqpk&t=909s  
+https://github.com/PedroCNeves/AC_ChargingStation/blob/main/README.md  
+https://github.com/tomwetjens/ArduinoEVSE/tree/master?tab=readme-ov-file  
+
+
+
+
+
 
 
 
